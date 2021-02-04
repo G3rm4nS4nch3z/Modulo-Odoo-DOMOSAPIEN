@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*- 
-from . import flota_app
+from .import flota_app

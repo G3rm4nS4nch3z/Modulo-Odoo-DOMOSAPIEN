@@ -15,16 +15,17 @@
         <!-- A first level in the left side menu is needed before using action= attribute-->
         <menuitem
             id="l1_menu_crear_flota"
-            name="Creacion de flotas"
+            name="Flotas"
             parent="main_menu_crear_flota"
         />
         <!-- Menu item to open-->
         <menuitem
             id="menu_crear_flota"
-            name="flotas"
+            name="Creacion de flotas"
             parent="l1_menu_crear_flota"
             action="action_crear_flota"
         /> 
+
  <!-- Vista de listado --> 
 <record id="view_tree_crear_flota" model="ir.ui.view">
    <field name="name">Creacion Flota Tree</field>
@@ -40,6 +41,7 @@
         </tree>
 </field>  
 </record>
+
  <!-- Vista de búsqueda --> 
 <record id="view_filter_crear_flota" model="ir.ui.view">
   <field name="name">Creacion Flota Filter</field>
@@ -55,6 +57,7 @@
         </search>
     </field>
  </record> 
+ 
 <!-- Vista de Formulario --> 
 <record id="view_form_crear_flota" model="ir.ui.view">
  <field name="name">Creacion Flota Form</field>
