@@ -35,8 +35,6 @@
             <field name="matricula"/>
             <field name="conductor"/>
             <field name="acompaniante"/>
-            <field name="set"/>
-            <field name="cantidad"/>
             <field name="ruta"/>
         </tree>
 </field>  
@@ -51,8 +49,6 @@
            <field name="matricula"/>
            <field name="conductor"/>
            <field name="acompaniante"/>
-           <field name="set"/>
-           <field name="cantidad"/>
            <field name="ruta"/>
         </search>
     </field>
@@ -72,14 +68,23 @@
                     <group name="group_left">
                        <field name="matricula"/>
                        <field name="conductor"/>
-                       <field name="set"/>
                        </group>
                     <group name="group_right">
                        <field name="ruta"/>
                        <field name="acompaniante"/>
-                       <field name="cantidad"/>
                     </group>
                 </group>
+                <notebook colspan="1">
+                    <page string="Sets">
+                        <field name="set_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Sets" editable="bottom">
+                                <field name="set"/>
+                                <field name="cantidad"/>
+                                <field name="set_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
             </sheet>
         </form>
     </field> 

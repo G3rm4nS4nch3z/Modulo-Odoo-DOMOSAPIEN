@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <act_window id="action_personalizacion_colab_user" name="Asignacion de Componentes" res_model="personalizacion.set" view_mode="tree,form,graph,pivot" />
+ <!-- Menu item to open personalizacion user list colaborativa -->
+ <menuitem id="menu_personalizacion_colab_user" name="Asignacion de Componentes" parent="personalizacion_set.l1_menu_personalizacion_set" sequence="30" action="action_personalizacion_colab_user" />
+    
+    <!-- vista formulario -->
+    <record id="view_form_personalizacion_user_inherited" model="ir.ui.view">
+
+        <field name="name">personalizacion user form – Collaborative</field>
+        <field name="model">personalizacion.set</field>
+        <field name="inherit_id" ref="personalizacion_set.view_form_personalizacion_set"/>
+        
+        <field name="arch" type="xml">
+            
+            
+            <field name="name_code" position="after">
+                <field name="user_id" />
+            </field>
+
+
+            <field name="is_done" position="before">
+                <field name="date_deadline" />
+            </field>
+
+            
+                <group name="group_top" position="after">
+                    <form string="Request">
+                        <sheet string="Request">    
+                            <notebook colspan="1">
+                            <page string="Componentes">
+                                <field name="componente_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Componentes" editable="bottom">
+                                        <field name="name_componente"/>
+                                        <field name="componente_id" invisible="1"/>
+                                        <field name="cantidad"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            </notebook>
+                        </sheet>
+                    </form>
+                </group>
+            
+
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </sheet>
+        </field>
+    </record>
+
+    <!-- vista listado -->
+    <record id="view_tree_personalizacion_user_inherited" model="ir.ui.view">
+
+        <field name="name">personalizacion user tree – User extension</field>
+        <field name="model">personalizacion.set</field>
+
+        <field name="inherit_id" ref="personalizacion_set.view_tree_personalizacion"/>
+        <field name="arch" type="xml">
+
+            <field name="name" position="after">
+                <field name="user_id" />
+            </field>
+
+            <field name="user_id" position="after">
+                <field name="date_deadline" />
+            </field>
+        </field>
+    </record>
+
+    <!-- vista filtros -->
+    <record id="view_filter_personalizacion_user_inherited" model="ir.ui.view">
+        <field name="name">personalizacion user tree – User extension</field>
+        <field name="model">personalizacion.set</field>
+        <field name="inherit_id" ref="personalizacion_set.view_filter_personalizacion_set"/>
+
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="user_id" />
+                <filter name="filter_my_users" string="Mis tareas" domain="[('user_id','in',[uid,False])]" />
+                <filter name="filter_not_assigned" string="Sin asignar" domain="[('user_id','=',False)]" />
+            </field>
+        </field>
+    </record>
+
+    <!-- vista grafica -->
+    <record id="view_graph_personalizacion" model="ir.ui.view">
+        <field name="name">Grafiaco</field>
+         <field name="model">personalizacion.set</field>
+         <field name="arch" type="xml">
+            <graph>
+                 <field name="name_code"/>
+                 <field name="cantidad" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_pivot_personalizacion" model="ir.ui.view">
+        <field name="name">Pivot</field>
+         <field name="model">personalizacion.set</field>
+         <field name="arch" type="xml">
+            <pivot>
+                <field name="name_code" type="col"/>
+                <field name="cantidad" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <report id="report_personalizacion_hours" model="personalizacion.set" string="Horas Asignadas" report_type="qweb-pdf" name="kanban.report_personalizacion_hours" attachment_use="False" file="kanban.report_personalizacion_hours" />
+</odoo>

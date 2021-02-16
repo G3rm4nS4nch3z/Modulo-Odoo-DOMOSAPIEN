@@ -72,10 +72,10 @@
 	<!-- Graficos -->
 	<record id="view_graph_vehiculo" model="ir.ui.view">	
 		<field name="name">Grafiaco</field>
- 		<field name="model">crear.flota</field>
+		<field name="model">crear.flota.set</field>
  		<field name="arch" type="xml">
 			<graph>
- 				<field name="matricula"/>			 
+ 				<field name="set"/>			 
  				<field name="cantidad" type="measure" />
 			</graph>
 		</field>
@@ -83,10 +83,10 @@
 
 	<record id="view_pivot_vehiculo" model="ir.ui.view">
 		<field name="name">Pivot</field>
- 		<field name="model">crear.flota</field>
+		<field name="model">crear.flota.set</field>
  		<field name="arch" type="xml">
 			<pivot>
-				<field name="matricula" type="col"/>
+				<field name="set" type="col"/>
  				<field name="cantidad" type="row"/>
 			</pivot>		
 		</field>
