@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crear_flota_group_user,crear.flota.user,model_crear_flota,base.group_user,1,1,1,1
+access_crear_flota_set_group_user,crear.flota.set.user,model_crear_flota_set,base.group_user,1,1,1,1

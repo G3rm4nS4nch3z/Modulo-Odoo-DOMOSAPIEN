@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_personalizacion_set_group_user,personalizacion.set.user,model_personalizacion_set,base.group_user,1,1,1,1
+access_personalizacion_set_componente_group_user,personalizacion.set.componente.user,model_personalizacion_set_componente,base.group_user,1,1,1,1

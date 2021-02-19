@@ -1,0 +1,70 @@
+<odoo>
+<!-- Action to open To-do Task list -->
+<act_window id="action_personalizacion_set" name="Personalizacion De Set" res_model="personalizacion.set" view_mode="tree,form"/>
+<!-- top level menu: no parent -->
+<menuitem id="main_menu_personalizacion_set" name="Personalizacion De Set"/>
+<!--A first level in the left side menu is needed before using action= attribute -->
+<menuitem id="l1_menu_personalizacion_set" name="Opciones de Sets" parent="main_menu_personalizacion_set"/>
+<!-- Menu item to open To-do Task list -->
+<menuitem id="menu_personalizacion_set" name="Creacion de Set" parent="l1_menu_personalizacion_set" action="action_personalizacion_set"/>
+<!-- Vista de listado -->
+<record id="view_tree_personalizacion" model="ir.ui.view">
+    <field name="name">Personalizacion Set Tree</field>
+    <field name="model">personalizacion.set</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="is_done"/>
+	    <field name="cantidad"/>
+        </tree>
+    </field>
+</record>
+
+<!-- Vista de búsqueda -->
+<record id="view_filter_personalizacion_set" model="ir.ui.view">
+    <field name="name">Personalizacion Set Filter</field>
+    <field name="model">personalizacion.set</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <filter name="done" string="Hechas" domain="[('is_done','!=',False)]"/>
+        </search>
+    </field>
+</record>
+<!-- Vista de Formulario -->
+<record id="view_form_personalizacion_set" model="ir.ui.view">
+    <field name="name">Personalizacion Set Form</field>
+    <field name="model">personalizacion.set</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+		<button name="do_prueba" type="object" string="crear uno de prueba"/>
+            </header>
+            <sheet>
+                <group name="group_top">
+                    <group name="group_left">
+                        <field name="name"/>
+                        <field name="name_code"/>   
+                    </group>
+                    <group name="group_right">
+                        <field name="is_done"/>
+                        <field name="cantidad"/>
+                    </group>
+                </group>
+                <div><h2>ASIGNACIÓN DE COMPONENTES</h2></div>	
+                <notebook colspan="1">
+                    <page string="Componentes">
+                        <field name="componente_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Componentes" editable="bottom">
+                                <field name="name_componente"/>
+                                <field name="componente_id" invisible="1"/>
+                                <field name="cantidad"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+</odoo>

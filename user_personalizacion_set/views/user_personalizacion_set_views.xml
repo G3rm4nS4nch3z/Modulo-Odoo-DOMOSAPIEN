@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <act_window id="action_personalizacion_colab_user" name="Vista de Gráficos" res_model="personalizacion.set" view_mode="graph,pivot" />
+ <!-- Menu item to open personalizacion user list colaborativa -->
+ <menuitem id="menu_personalizacion_colab_user" name="Vista de Gráficos" parent="personalizacion_set.l1_menu_personalizacion_set" sequence="30" action="action_personalizacion_colab_user" />
+    
+    <!-- vista formulario -->
+    <record id="view_form_personalizacion_user_inherited" model="ir.ui.view">
+
+        <field name="name">personalizacion user form – Collaborative</field>
+        <field name="model">personalizacion.set</field>
+        <field name="inherit_id" ref="personalizacion_set.view_form_personalizacion_set"/>
+        
+        <field name="arch" type="xml">
+            
+            
+            <field name="name_code" position="after">
+                <field name="user_id" />
+            </field>
+
+
+            <field name="is_done" position="before">
+                <field name="date_deadline" />
+            </field>
+            
+            <sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </sheet>
+        </field>
+    </record>
+
+    <!-- vista grafica -->
+    <record id="view_graph_personalizacion" model="ir.ui.view">
+        <field name="name">Gráfiaco</field>
+         <field name="model">personalizacion.set</field>
+         <field name="arch" type="xml">
+            <graph>
+                 <field name="name_code"/>
+                 <field name="cantidad" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_pivot_personalizacion" model="ir.ui.view">
+        <field name="name">Pivot</field>
+         <field name="model">personalizacion.set</field>
+         <field name="arch" type="xml">
+            <pivot>
+                <field name="name_code" type="col"/>
+                <field name="cantidad" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+</odoo>
