@@ -7,8 +7,6 @@
                     <div class = "page" >
                         <h2> Sets asignados a las flotas</h2>
                         <p> La matricula de esta flota es <span t-field = "o.matricula" /></p>
-                        <p> El numero del set es <span t-field = "o.set" /></p>
-                        <p> La cantidad de sets del set es de <span t-field = "o.cantidad" /></p>
                         <p> Los responsables de que lleguen correctamente son <span t-field = "o.conductor" /> y <span t-field = "o.acompaniante" /></p>
                         <p> El destino de los sets es <span t-field = "o.ruta" /></p>
                     </div>

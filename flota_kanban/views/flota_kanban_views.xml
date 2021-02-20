@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
- <act_window id="action_flota_kanban" name="Flota Kanban Board" res_model="crear.flota" view_mode="kanban,tree,form" />
+ <act_window id="action_flota_kanban" name="Estado de entregas" res_model="crear.flota" view_mode="kanban,tree,form" />
  <!-- Menu item to open Flota Kanban Board -->
- <menuitem id="menu_flota_kanban" name="Flota Kanban Board" parent="flota_app.l1_menu_crear_flota" sequence="30" action="action_flota_kanban"/>
+ <menuitem id="menu_flota_kanban" name="Estado de entregas" parent="flota_app.l1_menu_crear_flota" sequence="30" action="action_flota_kanban"/>
  <record id="Crear FLota Kanban" model="ir.ui.view">
     <field name="name">Crear Flota Kanban</field>
     <field name="model">crear.flota</field>

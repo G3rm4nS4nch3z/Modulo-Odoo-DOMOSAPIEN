@@ -13,6 +13,7 @@ class CrearFlota(models.Model):
         self.matricula = '' 
         return True
 
+
 class DevSet(models.Model):
    _name = 'crear.flota.set'
    set = fields.Many2one('personalizacion.set', required=True)

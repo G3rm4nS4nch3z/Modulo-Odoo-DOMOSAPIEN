@@ -22,7 +22,7 @@
         <field name="model">board.board</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="Flota Dashboard">
+            <form string="Datos Generales">
                 <board style="2-1">
                     <column>
                         <action string="Sets asignados" name="%(act_flota_graph)d" height="150" width="510"/>
@@ -42,5 +42,5 @@
         <field name="usage">menu</field>
         <field name="view_id" ref="board_flota_form"/>
     </record>
-    <menuitem name="Flota Dashboard" parent="flota_app.l1_menu_crear_flota" action="open_board_flota" sequence="1" id="menu_flota_board"/>
+    <menuitem name="Datos Generales" parent="flota_app.l1_menu_crear_flota" action="open_board_flota" sequence="1" id="menu_flota_board"/>
 </odoo>

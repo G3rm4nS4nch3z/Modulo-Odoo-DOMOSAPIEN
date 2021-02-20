@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record model="ir.actions.act_window" id="act_personalizacion_graph">
-        <field name="name">Horas asignadas</field>
+        <field name="name">Relacion codigo/cantidad</field>
         <field name="res_model">personalizacion.set</field>
         <field name="view_mode">graph</field>
         <field name="view_id" ref="user_personalizacion_set.view_graph_personalizacion"/>
     </record>
  
     <record model="ir.actions.act_window" id="act_personalizacion_pivot">
-        <field name="name">Horas</field>
+        <field name="name">codigo/cantidad</field>
         <field name="res_model">personalizacion.set</field>
         <field name="view_mode">pivot</field>
         <field name="view_id" ref="user_personalizacion_set.view_pivot_personalizacion"/>
@@ -28,12 +28,12 @@
             <form string="To-Do Dashboard">
                 <board style="2-1">
                     <column>
-                        <action string="Horas asignadas" name="%(act_personalizacion_graph)d" height="150" width="510"/>
-                        <action string="Horas" name="%(act_personalizacion_pivot)d"/>
+                        <action string="Relacion codigo/cantidad" name="%(act_personalizacion_graph)d" height="150" width="510"/>
+                        <action string="codigo/cantidad" name="%(act_personalizacion_pivot)d"/>
                     </column>
                     
                     <column>
-                        <action string="Tareas" name="%(act_personalizacion_pivot)d"/>
+                        <action string="Tareas" name="%(act_personalizacion_list)d"/>
                     </column>
                 </board>
             </form>
@@ -48,5 +48,5 @@
         <field name="view_id" ref="board_personalizacion_form"/>
     </record>
     
-    <menuitem name="personalizacion_set Dashboard" parent="personalizacion_set.l1_menu_personalizacion_set" action="open_board_personalizacion" sequence="1" id="menu_personalizacion_board"/>
+    <menuitem name="Vista de Personalizaciones Dashboard" parent="personalizacion_set.l1_menu_personalizacion_set" action="open_board_personalizacion" sequence="1" id="menu_personalizacion_board"/>
 </odoo>
