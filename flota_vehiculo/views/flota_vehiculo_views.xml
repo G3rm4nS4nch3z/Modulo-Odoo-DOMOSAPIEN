@@ -6,45 +6,17 @@
 		id="action_alquilar_vehiculo" 
 		name="Alquiler Vehiculos" 
 		res_model="crear.flota" 
-		view_mode="tree,form,graph,pivot" 
+		view_mode="graph,pivot" 
 	/>
 
 	<!-- Menu item to open To-do Task list colaborativa -->
 	<menuitem 
 		id="menu_alquilar_vehiculo" 
-		name="Alquiler de vehiculos" 
+		name="Vista de Graficos" 
 		parent="flota_app.l1_menu_crear_flota" 
 		sequence="30" 
 		action="action_alquilar_vehiculo" 
 	/>
-
-    <!-- Vista de listado --> 
-	<record id="view_tree_alquilar_vehiculo" model="ir.ui.view">
-		<field name="name">Alquiler de Vehiculos Tree</field>
-		<field name="model">crear.flota</field>
-		<field name="inherit_id" ref="flota_app.view_tree_crear_flota"/>
-		<field name="arch" type="xml">
-			<field name="matricula" position="after">
-				<field name="usuario_encargado" />
-			</field>
-			<field name="usuario_encargado" position="after">
-				<field name="inicio_alquiler" />			
-			</field>
-            <field name="inicio_alquiler" position="after">
-				<field name="final_alquiler" />			
-			</field>
-		</field>	
-	</record>
-
-    <!-- Vista de búsqueda --> 
-    <record id="view_filter_alquilar_vehiculo" model="ir.ui.view">
-		<field name="name">Alquiler de Vehiculos Filter</field>
-		<field name="model">crear.flota</field>		
-		<field name="inherit_id" ref="flota_app.view_filter_crear_flota"/>	
-		<field name="arch" type="xml">	
-                	<field name="matricula" />	
-		</field>
-	</record>
 
  	<!-- Vista de formulario --> 
 	<record id="view_form_alquilar_vehiculo" model="ir.ui.view">
@@ -58,6 +30,7 @@
 					<field name="usuario_encargado" />
 					<field name="inicio_alquiler" />			
 					<field name="final_alquiler" />
+					<field name="litros_gasofa" />
 				</group>
 			</group>						
 			<sheet position="after">
@@ -72,22 +45,22 @@
 	<!-- Graficos -->
 	<record id="view_graph_vehiculo" model="ir.ui.view">	
 		<field name="name">Grafiaco</field>
-		<field name="model">crear.flota.set</field>
+		<field name="model">crear.flota</field>
  		<field name="arch" type="xml">
 			<graph>
- 				<field name="set"/>			 
- 				<field name="cantidad" type="measure" />
+ 				<field name="matricula"/>			 
+ 				<field name="litros_gasofa" type="measure" />
 			</graph>
 		</field>
 	</record>
 
 	<record id="view_pivot_vehiculo" model="ir.ui.view">
 		<field name="name">Pivot</field>
-		<field name="model">crear.flota.set</field>
+		<field name="model">crear.flota</field>
  		<field name="arch" type="xml">
 			<pivot>
-				<field name="set" type="col"/>
- 				<field name="cantidad" type="row"/>
+				<field name="matricula" type="col"/>
+ 				<field name="litros_gasofa" type="row"/>
 			</pivot>		
 		</field>
 	</record>

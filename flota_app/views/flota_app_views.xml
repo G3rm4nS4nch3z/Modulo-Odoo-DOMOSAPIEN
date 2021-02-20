@@ -74,6 +74,7 @@
                        <field name="acompaniante"/>
                     </group>
                 </group>
+                <div><h2>ASIGNACIÓN DE SETS</h2></div>	
                 <notebook colspan="1">
                     <page string="Sets">
                         <field name="set_ids" nolabel="1" widget="one2many_list">
